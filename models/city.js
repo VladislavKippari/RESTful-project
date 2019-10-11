@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     countryCode: DataTypes.STRING,
     district: DataTypes.STRING,
     population: DataTypes.INTEGER
-  }, {});
+  }, {timestamps: false});
   City.associate = function(models) {
     City.hasOne(models.Country,{
       foreignKey: 'code',

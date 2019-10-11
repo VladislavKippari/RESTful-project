@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
     headofstate: DataTypes.STRING,
     capital: DataTypes.INTEGER,
     code2: DataTypes.STRING
-  }, {});
+  }, {timestamps: false});
   Country.associate = function(models) {
     // associations can be defined here
   };
