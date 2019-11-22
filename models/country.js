@@ -1,7 +1,9 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Country = sequelize.define('Country', {
-    code: DataTypes.STRING,
+   
+    code: {type:DataTypes.STRING, unique: true,
+      primaryKey: true},
     name: DataTypes.STRING,
     continent: DataTypes.STRING,
     region: DataTypes.STRING,
@@ -17,8 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     capital: DataTypes.INTEGER,
     code2: DataTypes.STRING
   }, {timestamps: false});
-  Country.associate = function(models) {
-    // associations can be defined here
-  };
+ 
   return Country;
 };

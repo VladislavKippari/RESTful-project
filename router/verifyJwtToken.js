@@ -26,20 +26,15 @@ verifyToken = (req, res, next) => {
 }
  
 isAdmin = (req, res, next) => {
-  
   User.findOne({
     where: {id:req.id},
-    
-  
   }).then(user => {
-     
-        
+
           if(user.roleId==2){
             next();
             return;
           }
-        
-        
+
         res.status(403).send("Require Admin Role!");
         return;
      
