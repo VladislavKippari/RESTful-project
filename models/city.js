@@ -1,17 +1,16 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const City = sequelize.define('City', {
-    
-    name: DataTypes.STRING,
-    countryCode: DataTypes.STRING,
-    district: DataTypes.STRING,
-    population: DataTypes.INTEGER
-  }, {timestamps: false});
-  City.associate = function(models) {
-    City.hasOne(models.Country,{
-      foreignKey: 'code',
-      as: 'countryCode'
-    });
-  };
+    id: {
+      type: DataTypes.INTEGER,
+
+      unique: true,
+      primaryKey: true
+  },
+    name: {type:DataTypes.STRING},
+    countryCode: {type:DataTypes.STRING,references:{model:'country',key:'country',as:'countryCode'}},
+    district: {type:DataTypes.STRING}, 
+    population: {type:DataTypes.INTEGER}
+  }, {timestamps: false, freezeTableName:true});
   return City;
 };

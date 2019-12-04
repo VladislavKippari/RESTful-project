@@ -1,12 +1,12 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Countrys', {
+    return queryInterface.createTable('Country', {
+
       code: {
-        allowNull: false,
-        autoIncrement: false,
-        primaryKey: true,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true,
+        primaryKey: true
       },
       
       name: {
@@ -52,7 +52,7 @@ module.exports = {
         type: Sequelize.STRING
       }
     }).then(function() {
-      queryInterface.createTable('Citys', {
+      queryInterface.createTable('City', {
         id: {
           allowNull: false,
           autoIncrement: false,
@@ -65,7 +65,7 @@ module.exports = {
         },
         countryCode: {
           type: Sequelize.STRING,
-          references: { model: 'Countrys', key: 'code' }
+          references: { model: 'Country', key: 'code' }
         },
         district: {
           type: Sequelize.STRING
@@ -77,7 +77,7 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Countrys');
+    return queryInterface.dropTable('Country');
   
   }
 };

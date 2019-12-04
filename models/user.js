@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     roleId: DataTypes.INTEGER
-  }, {timestamps: false});
+  }, {timestamps: false, freezeTableName:true});
   User.associate = function(models) {
     User.hasOne(models.Role,{
       foreignKey: 'id',

@@ -1,6 +1,6 @@
 {
   "development": {
-    "username": "vlad",
+    "username": "root",
     "password": null,
     "database": "world",
     "host": "localhost",

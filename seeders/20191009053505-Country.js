@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Countrys', [{
+    return queryInterface.bulkInsert('Country', [{
           "code": "KEN",
           "name": "Kenya",
           "continent": "Africa",
@@ -4068,6 +4068,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Countrys', null, {});
+    return queryInterface.bulkDelete('Country', null, {});
   }
 };

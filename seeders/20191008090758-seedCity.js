@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Citys', [{
+    return queryInterface.bulkInsert('City', [{
           "id": "3236",
           "name": "Helsinki [Helsingfors]",
           "countryCode": "FIN",
@@ -28216,6 +28216,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('Citys', null, {});
+    return queryInterface.bulkDelete('City', null, {});
   }
 };

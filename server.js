@@ -10,7 +10,7 @@ const db = require('./models/index.js');
 const Role = db.role;
 var connection = mysqll.createConnection({
     host: 'localhost',
-    user: 'vlad',
+    user: 'root',
     database: 'world'
   })
   connection.connect(function(err) {
@@ -18,8 +18,6 @@ var connection = mysqll.createConnection({
     console.log('You are now connected...')
   });
 
-
-  
 
 
 // listen for requests
