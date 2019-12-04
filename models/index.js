@@ -28,3 +28,4 @@ db.user.belongsTo(db.role, { through: 'user_roles', foreignKey: 'id', otherKey: 
 db.country.belongsToMany(db.city, { through: 'country_city', unique: false});
 db.city.belongsTo(db.country, { through: 'country_city', unique: false});
 module.exports = db;
+
