@@ -1,18 +1,9 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-<<<<<<< HEAD
     return queryInterface.createTable('Country', {
 
       code: {
-=======
-    return queryInterface.createTable('Countrys', {
-    
-      code: {
-       
-        
-        
->>>>>>> 5b9316306e2ad7d1d89f249ba3172cca293645a3
         type: Sequelize.STRING,
         unique: true,
         primaryKey: true
