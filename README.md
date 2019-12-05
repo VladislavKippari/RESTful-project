@@ -13,7 +13,7 @@
   >
   >sequelize db:seed --seed 20191009053505-Country
   >
-  >sequelize db:seed 20191008090758-seedCity  
+  >sequelize db:seed --seed 20191008090758-seedCity  
     
   или
 
