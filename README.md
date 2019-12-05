@@ -15,9 +15,9 @@
   >
   >sequelize db:seed --seed 20191008090758-seedCity  
   
-  >если в терминале ошибка, когда команда sequelize не распознана, то
+  >если в терминале ошибка, когда команда sequelize не распознана, то прописать команду npm install -g sequelize-cli
   
-   >прописать команду npm install -g sequelize-cli
+   
     
   или
 
