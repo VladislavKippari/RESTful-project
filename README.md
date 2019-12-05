@@ -17,7 +17,7 @@
   
   >если в терминале ошибка, когда команда sequelize не распознана, то
   
-   прописать команду npm install -g sequelize-cli
+   >прописать команду npm install -g sequelize-cli
     
   или
 
