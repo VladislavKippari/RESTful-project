@@ -21,7 +21,7 @@
   >
   >npx sequelize-cli db:seed --seed 20191009053505-Country
   >
-  >npx sequelize-cli db:seed 20191008090758-seedCity
+  >npx sequelize-cli db:seed --seed  20191008090758-seedCity
 
 #### 3. Работа с проектом
 * Для включения проекта прописать в терминале команду:
