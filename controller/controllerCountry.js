@@ -8,8 +8,8 @@ exports.countryContentAll = (req, res) =>
         attributes:['code','name']
     }).then(country => {
         res.status(200).json({
-          "description": "List of all Countries",
-          "user": country
+         
+          country
         });
       }).catch(err => {
         res.status(500).json({

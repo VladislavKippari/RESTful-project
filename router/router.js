@@ -1,12 +1,15 @@
 const verifySignUp = require('./verifySignUp');
 const authJwt = require('./verifyJwtToken');
- 
+var express = require('express')
+var cors = require('cors')
+var app = express()
+
 const controllerUser = require('../controller/controllerUser.js');
 const controllerContry = require('../controller/controllerCountry.js');
 const controllerCity = require('../controller/controllerCity.js');
 module.exports = (app) => {
  
-
+  app.use(cors())
   app.post('/api/auth/signup', controllerUser.signup);
 
   app.post('/api/auth/signin', controllerUser.signin);
