@@ -14,7 +14,9 @@ verifyToken = (req, res, next) => {
   }
  
   jwt.verify(token, config.secret, (err, decoded) => {
+  
     if (err){
+      
       return res.status(500).send({ 
           auth: false, 
           message: 'Fail to Authentication. Error -> ' + err 
@@ -29,9 +31,10 @@ isAdmin = (req, res, next) => {
   User.findOne({
     where: {id:req.id},
   }).then(user => {
-
+  
           if(user.roleId==2){
             next();
+        
             return;
           }
 

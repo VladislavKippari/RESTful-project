@@ -11,23 +11,42 @@ var bcrypt = require('bcryptjs');
 exports.signup = (req, res) => {
   // Save User to Database
   console.log("Processing func -> SignUp");
-  
-  User.create({
-    name: req.body.name,
-    email:  req.body.email,
-   roleId: req.body.roleId,
-    password:  bcrypt.hashSync(req.body.password, 8)
+  User.findOne({
+    where: {
+      name: req.body.name
+     
+    }
   }).then(user => {
-    
-    
-    res.send("Success!");
-    
-  }).catch(err => {
+    if(!user){
+      User.findOne({
+        where: {
+          
+          email:req.body.email
+        }
+      }).then(user=>{
+        if(!user){
+          User.create({
+            name: req.body.name,
+            email:  req.body.email,
+            password:  bcrypt.hashSync(req.body.password, 8),
+            roleId: req.body.roleId,
+          });
+          res.send("User added!");
+        }else{
+          res.send("This email in use");
+        }
+      })
+    }else{
+      res.send("This username in use");
+    }
+  
+  
+}).catch(err => {
     res.status(500).send("Error -> " + err);
   });
   
 }
- 
+
 exports.signin = (req, res) => {
   console.log("Sign-In");
   
@@ -49,7 +68,7 @@ exports.signin = (req, res) => {
       expiresIn: 86400 // expires in 24 hours
     });
     
-    res.status(200).send({ auth: true, accessToken: token });
+    res.status(200).send({token,roleId:user.roleId});
     
   }).catch(err => {
     res.status(500).send('Error -> ' + err);

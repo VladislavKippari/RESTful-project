@@ -14,13 +14,14 @@ module.exports = (app) => {
 
   app.post('/api/auth/signin', controllerUser.signin);
 
-  app.get('/api/test/user', [authJwt.verifyToken], controllerUser.userContent);
+  app.get('/api/content/user', [authJwt.verifyToken], controllerUser.userContent);
 
   app.get('/api/test/admin', [authJwt.verifyToken, authJwt.isAdmin], controllerUser.adminBoard);
 
-  app.get('/api/world/country/all', controllerContry.countryContentAll);
+  app.get('/api/world/country/all',controllerContry.countryContentAll);
 
   app.get('/api/world/country/continent/:continent', controllerContry.countryContentByContinent);
+  app.get('/api/world/country/:code', controllerContry.countryContentByCode);
 
   app.get('/api/world/country/:name/city/all', controllerContry.countryContentCityByCountry);
 

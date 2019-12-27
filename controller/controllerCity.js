@@ -6,11 +6,11 @@ const Op = Sequelize.Op;
 exports.cityContentAll = (req, res) =>
 {
     City.findAll({
-        attributes:['name']
+        attributes:['name','countryCode']
     }).then(city => {
         res.status(200).json({
-          "description": "List of all Countries",
-          "user": city
+          
+          "city": city
         });
       }).catch(err => {
         res.status(500).json({
@@ -27,8 +27,8 @@ exports.cityContentCityByPopulation = (req, res) =>
     attributes: ['id','countryCode','name', 'population']
   }).then(city => {
     res.status(200).json({
-      "description": "List of all cities with population more than 1000000",
-      "user": city
+      
+      "city": city
     });
   }).catch(err => {
     res.status(500).json({

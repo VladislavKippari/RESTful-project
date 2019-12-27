@@ -18,6 +18,23 @@ exports.countryContentAll = (req, res) =>
         });
     })
 }
+exports.countryContentByCode = (req, res) =>
+{
+    Country.findAll({
+      where: {code: req.params.code},
+        attributes:['code','name']
+    }).then(country => {
+        res.status(200).json({
+         
+          country
+        });
+      }).catch(err => {
+        res.status(500).json({
+          "description": "Cant find any countries",
+          "error": err
+        });
+    })
+}
 
 exports.countryContentByContinent = (req, res) =>
 {
@@ -27,7 +44,7 @@ exports.countryContentByContinent = (req, res) =>
     }).then(country => {
         res.status(200).json({
           "description": "List of founded countries",
-          "user": country
+          "country": country
         });
       }).catch(err => {
         res.status(500).json({
