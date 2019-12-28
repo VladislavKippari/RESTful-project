@@ -11,6 +11,7 @@ module.exports = (app) => {
  
   app.use(cors())
   app.post('/api/auth/signup', controllerUser.signup);
+  app.post('/api/auth/newuser', [authJwt.verifyToken, authJwt.isAdmin],controllerUser.signup);
 
   app.post('/api/auth/signin', controllerUser.signin);
 
