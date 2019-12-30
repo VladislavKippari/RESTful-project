@@ -14,7 +14,7 @@ module.exports = (app) => {
   app.post('/api/auth/newuser', [authJwt.verifyToken, authJwt.isAdmin],controllerUser.signup);
 
   app.post('/api/auth/signin', controllerUser.signin);
-
+  app.put('/api/auth/update', controllerUser.updateUser);
   app.get('/api/content/user', [authJwt.verifyToken], controllerUser.userContent);
 
   app.get('/api/test/admin', [authJwt.verifyToken, authJwt.isAdmin], controllerUser.adminBoard);
