@@ -48,7 +48,7 @@ exports.signup = (req, res) => {
 }
 
 exports.updateUser = (req, res) => {
-  User.update({ name: req.body.name, email: req.body.email, password: bcrypt.hashSync(req.body.password, 8) }, {
+  User.update({ name: req.body.name, email: req.body.email }, {
     where: { id: req.body.id }
   }).then(user => {
     res.status(200).send("User updated successfully");
@@ -77,7 +77,7 @@ exports.signin = (req, res) => {
       expiresIn: 86400 // expires in 24 hours
     });
 
-    res.status(200).send({ token, roleId: user.roleId, email: user.email, id: user.id });
+    res.status(200).send({ token, roleId: user.roleId, email: user.email, id: user.id,name:user.name });
 
   }).catch(err => {
     res.status(500).send('Error -> ' + err);
