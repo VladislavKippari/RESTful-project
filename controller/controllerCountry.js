@@ -5,7 +5,7 @@ const City = db.city;
 exports.countryContentAll = (req, res) =>
 {
     Country.findAll({
-        attributes:['code','name']
+        attributes:['code','name','continent','region','surfacearea','indepyear','population','lifeexpectancy','gnp','gnpold','localname','governmentform','headofstate','capital','code2']
     }).then(country => {
         res.status(200).json({
          

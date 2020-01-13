@@ -6,7 +6,7 @@ const Op = Sequelize.Op;
 exports.cityContentAll = (req, res) =>
 {
     City.findAll({
-        attributes:['name','countryCode']
+        attributes:['name','countryCode', 'id', 'population', 'district']
     }).then(city => {
         res.status(200).json({
           
