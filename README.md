@@ -21,7 +21,7 @@ Software to run project: XAMPP, Node.js, Visual Studio code
   >
   >sequelize db:seed --seed 20191230101607-admin
   
-  >if sequelize command not recognized run command npm install -g sequelize-cli
+ if sequelize command not recognized run command npm install -g sequelize-cli
   
    
 
