@@ -1,5 +1,6 @@
-## RESTful-project Node.js+Express+Sequelize
-Для работы с проектом, должно быть установлены: XAMPP, Node.js
+# Backend for SPA - https://github.com/VladislavKippari/Worldfrontend
+## RESTful-project Node.js+Express+Sequelize 
+Software to run project: XAMPP, Node.js
 #### 1. Установка проекта
 * Клонировать проект в выбранное место командой:
   > git clone https://github.com/VladislavKippari/RESTful-project.git
