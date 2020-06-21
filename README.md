@@ -1,8 +1,9 @@
-#### This is backend for SPA - https://github.com/VladislavKippari/Worldfrontend
+
 ## RESTful-project Node.js+Express+Sequelize 
+#### This is backend for SPA - https://github.com/VladislavKippari/Worldfrontend
 Software to run project: XAMPP, Node.js
-#### 1. Установка проекта
-* Клонировать проект в выбранное место командой:
+#### 1. Project setup
+* Clone project:
   > git clone https://github.com/VladislavKippari/RESTful-project.git
 * Прописать в терминале команду для установки нужных библиотек
   > npm install
