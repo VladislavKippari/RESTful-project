@@ -8,7 +8,7 @@ Software to run project: XAMPP, Node.js
 * Then
   > npm install
 #### 2. Database setup
-* Turn ON XAMPP Apache и MySQL
+* Turn ON XAMPP Apache and MySQL
 * Create local database *world*
 * Database migration in order:
   >sequelize db:migrate
