@@ -1,7 +1,7 @@
 
 ## RESTful-project Node.js+Express+Sequelize 
 #### This is backend for SPA - https://github.com/VladislavKippari/Worldfrontend
-Software to run project: XAMPP, Node.js
+Software to run project: XAMPP, Node.js, Visual Studio code
 #### 1. Project setup
 * Clone project:
   > git clone https://github.com/VladislavKippari/RESTful-project.git
