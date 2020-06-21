@@ -1,4 +1,4 @@
-#### Backend for SPA - https://github.com/VladislavKippari/Worldfrontend
+#### This is backend for SPA - https://github.com/VladislavKippari/Worldfrontend
 ## RESTful-project Node.js+Express+Sequelize 
 Software to run project: XAMPP, Node.js
 #### 1. Установка проекта
