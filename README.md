@@ -1,6 +1,6 @@
 
 ## Backend REST-project Node.js+Express+Sequelize for Angular SPA
-#### You can find frontend Angular SPA - https://github.com/VladislavKippari/Worldfrontend
+#### You can find frontend Angular SPA on  https://github.com/VladislavKippari/Worldfrontend
 Software to run project: XAMPP, Node.js, Visual Studio code
 #### 1. Project setup
 * Clone project:
