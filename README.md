@@ -5,7 +5,7 @@ Software to run project: XAMPP, Node.js
 #### 1. Project setup
 * Clone project:
   > git clone https://github.com/VladislavKippari/RESTful-project.git
-* 
+* Then
   > npm install
 #### 2. Database setup
 * Turn ON XAMPP Apache и MySQL
