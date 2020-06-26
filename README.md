@@ -28,6 +28,10 @@ Software to run project: XAMPP, Node.js, Visual Studio code
 #### 3. Run project
 * In terminal:
   > npm start
+* Now you can try API routes:
+  - /api/world/country/city/all
+  - /api/world/country/continent/:continent
+  - /api/world/country/:code  
 #### 4. Combine with frontend
 1. Open two visual studio code window
 2. First window for backend
