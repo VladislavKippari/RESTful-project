@@ -32,3 +32,5 @@ Software to run project: XAMPP, Node.js, Visual Studio code
 1. Open two visual studio code window
 2. First window for backend
 3. Second window for frontend
+# Heroku cloud app link.
+- https://backendjwt.herokuapp.com/
