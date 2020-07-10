@@ -4,7 +4,8 @@
     "password": null,
     "database": "world",
     "host": "localhost",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "timestamps":false
    
   }
   
