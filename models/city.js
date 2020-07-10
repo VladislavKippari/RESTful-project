@@ -8,9 +8,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
   },
     name: {type:DataTypes.STRING},
-    countryCode: {type:DataTypes.STRING,references:{model:'country',key:'country',as:'countryCode'}},
+    countryCode: {type:DataTypes.STRING},
     district: {type:DataTypes.STRING}, 
     population: {type:DataTypes.INTEGER}
   }, {timestamps: false, freezeTableName:true});
+ 
   return City;
 };
