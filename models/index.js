@@ -23,9 +23,9 @@ db.role = require('./role.js')(sequelize, Sequelize);
 db.city = require('./city.js')(sequelize, Sequelize);
 db.country = require('./country.js')(sequelize, Sequelize);
 
-db.role.belongsToMany(db.user, { through: 'user_roles', foreignKey: 'id', otherKey: 'userId'});
-db.user.belongsTo(db.role, { through: 'user_roles', foreignKey: 'id', otherKey: 'roleId'});
-db.country.belongsToMany(db.city, { through: 'country_city', unique: false});
-db.city.belongsTo(db.country, { through: 'country_city', unique: false});
+db.role.belongsToMany(db.user, { through: 'user', foreignKey:  'roleId'});
+db.user.belongsTo(db.role, { through: 'role',  foreignKey: 'roleId'});
+db.country.hasMany(db.city, { as: 'capitaltown'});
+db.city.belongsTo(db.country, { foreignKey: 'countryCode', as:'country'});
 module.exports = db;
 
