@@ -1,12 +1,15 @@
 const db = require('../models/index.js');
 const Sequelize = require('sequelize');
 const City = db.city;
+const Country = db.country;
 const Op = Sequelize.Op;
 
 exports.cityContentAll = (req, res) =>
 {
     City.findAll({
-        attributes:['name','countryCode', 'id', 'population', 'district']
+        attributes:['name','countryCode', 'id', 'population', 'district'],
+        include: [{model: Country, as: 'country'}]
+
     }).then(city => {
         res.status(200).json({
           
@@ -53,13 +56,17 @@ exports.addCity = (req, res) => {
 }
 
 exports.updateCity = (req, res) => {
-    City.update({name: req.body.name},{
-        where: {id: req.params.id}
-    }).then(city =>{
-        res.status(200).send("City updated successfully");
+    City.update({name: req.body.capitaltown.capitalname},{
+        where: {id: parseInt(req.params.cityId)},returning: true
+    }) .then((res) => {
+     
+      console.log(res);
+    
     }).catch(err =>{
-        res.status(500).send("Error: " + err);
-    });
+      res.status(500).send("Error: " + err);
+      console.warn(xhr.responseText)
+  });
+   
 }
 
 exports.deleteCity = (req,res) =>{
