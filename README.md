@@ -10,7 +10,7 @@ Software to run project: XAMPP, Node.js, Visual Studio code
 #### 2. Database setup
 * Turn ON XAMPP Apache and MySQL
 * Create local database *world*
-* Database setup steps in order:
+* Database setup steps in order in VS code terminal:
   >sequelize db:migrate
   >
   >sequelize db:seed --seed 20191009053505-Country
