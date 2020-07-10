@@ -1,15 +1,32 @@
 const db = require('../models/index.js');
+const Sequelize = require('sequelize'); 
+const op = Sequelize.Op;
+
 const Country = db.country;
 const City = db.city;
 
 exports.countryContentAll = (req, res) =>
 {
     Country.findAll({
-        attributes:['code','name','continent','region','surfacearea','indepyear','population','lifeexpectancy','gnp','gnpold','localname','governmentform','headofstate','capital','code2']
+      attributes:['code','name','continent','region','surfacearea','indepyear','population','lifeexpectancy','gnp','gnpold','localname','governmentform','headofstate','code2','capital'],
+      model:Country,
+           include: [{model:City,as:'capitaltown',attributes:[['name','capitalname']],
+           where:{id:{[op.col]:'Country.capital'}}
+
+      }],
+      
+      nest: true,
+      raw: true
     }).then(country => {
-        res.status(200).json({
-         
-          country
+      
+      country.sort(function(a, b){
+        if(a.name < b.name) { return -1; }
+        if(a.name > b.name) { return 1; }
+        return 0;
+    })
+        res.status(200).json({        
+           country
+
         });
       }).catch(err => {
         res.status(500).json({
@@ -17,6 +34,14 @@ exports.countryContentAll = (req, res) =>
           "error": err
         });
     })
+}
+exports.updateCountry = (req, res) => {
+  Country.update({name: req.body.name,continent:req.body.continent,surfacearea:req.body.surfacearea,population:req.body.population},{
+      where: {code: req.params.code}
+  }) .then(function(rowsUpdated) {
+    res.json(rowsUpdated)
+  });
+ 
 }
 exports.countryContentByCode = (req, res) =>
 {
