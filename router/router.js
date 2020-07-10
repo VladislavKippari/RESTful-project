@@ -15,8 +15,8 @@ module.exports = (app) => {
 
   app.post('/api/auth/signin', controllerUser.signin);
   app.put('/api/auth/update', controllerUser.updateUser);
-  
-
+  app.put('/api/city/:cityId',[authJwt.verifyToken, authJwt.isAdmin], controllerCity.updateCity);
+  app.put('/api/country/:code',[authJwt.verifyToken, authJwt.isAdmin], controllerContry.updateCountry);
   app.get('/api/test/admin', [authJwt.verifyToken, authJwt.isAdmin], controllerUser.adminBoard);
 
   app.get('/api/world/country/all',controllerContry.countryContentAll);
@@ -35,4 +35,6 @@ module.exports = (app) => {
   app.put('/api/world/country/city/update/:id', controllerCity.updateCity);
 
   app.delete('/api/world/country/city/delete/:id', controllerCity.deleteCity);
+  
+
 }
